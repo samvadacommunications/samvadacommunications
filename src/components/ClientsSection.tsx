@@ -9,25 +9,82 @@ const clients = [
   { name: "sano", logo: "/sano.jpg" },
 ];
 
+import { useRef, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
 const ClientsSection = () => {
-  // Duplicate the clients array to create seamless loop
-  const allClients = [...clients, ...clients];
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = 300;
+      scrollRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        const isMobile = window.innerWidth < 768;
+        const scrollAmount = isMobile ? 150 : 200;
+        
+        if (scrollLeft + clientWidth >= scrollWidth) {
+          scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+      }
+    }, isMobile ? 2000 : 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
   return (
     <section className="py-16 bg-background border-y border-border overflow-hidden">
       <div className="container mx-auto px-4 mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center animate-fade-in">
-          Trusted by Leading Brands
-        </h2>
+        <div className="flex items-center justify-between">
+          <h2 className="text-3xl md:text-4xl font-bold animate-fade-in">
+            Trusted by Leading Brands
+          </h2>
+          <div className="flex gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => scroll('left')}
+              className="h-10 w-10 p-0"
+            >
+              <ChevronLeft size={16} />
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => scroll('right')}
+              className="h-10 w-10 p-0"
+            >
+              <ChevronRight size={16} />
+            </Button>
+          </div>
+        </div>
       </div>
 
       {/* Scrolling Container */}
       <div className="relative">
-        <div className="flex animate-scroll whitespace-nowrap">
-          {allClients.map((client, index) => (
+        <div 
+          ref={scrollRef}
+          className="flex overflow-x-auto scrollbar-hide gap-6 px-4"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {clients.map((client, index) => (
             <div
-              key={`${client.name}-${index}`}
-              className="inline-flex flex-col items-center justify-center mx-6 p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 min-w-[140px]"
+              key={client.name}
+              className="flex-shrink-0 flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 min-w-[140px]"
             >
               <img
                 src={client.logo}
