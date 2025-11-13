@@ -29,7 +29,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Our Location",
-      details: ["Saligrama", "Udupi, Karnataka", "India"],
+      details: ["S S Complex Saibrakatte", "Shiriyara Village 576210"],
     },
     {
       icon: Phone,

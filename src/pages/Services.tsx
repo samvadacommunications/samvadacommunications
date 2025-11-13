@@ -122,63 +122,59 @@ const Services = () => {
           </div>
         </section>
 
-        {/* Services Detailed */}
-        <section className="container mx-auto px-4 space-y-20">
-          {services.map((service, index) => (
-            <div
-              key={service.title}
-              className={`grid lg:grid-cols-2 gap-12 items-center ${
-                index % 2 === 1 ? "lg:flex-row-reverse" : ""
-              }`}
-            >
-              {/* Image/Icon */}
-              <div 
-                className={`${index % 2 === 1 ? "lg:order-2" : ""} animate-fade-in`}
+        {/* Services Grid */}
+        <section className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <div
+                key={service.title}
+                className="group bg-card rounded-2xl overflow-hidden shadow-lg border border-border hover:shadow-xl transition-all duration-300 animate-fade-in-up"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                {service.image ? (
-                  <div className="rounded-3xl overflow-hidden shadow-2xl">
-                    <img 
-                      src={service.image} 
-                      alt={service.title}
-                      className="w-full h-auto object-cover hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                ) : (
-                  <div className="w-full h-96 rounded-3xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-2xl">
-                    <service.icon size={120} className="text-primary-foreground" />
-                  </div>
-                )}
-              </div>
-
-              {/* Content */}
-              <div className={`${index % 2 === 1 ? "lg:order-1" : ""} space-y-6 animate-slide-in-right`}>
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-primary-foreground">
-                  <service.icon size={28} />
+                {/* Service Image */}
+                <div className="h-48 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title} 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
                 </div>
-
-                <h2 className="text-3xl md:text-4xl font-bold">{service.title}</h2>
                 
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  {service.description}
-                </p>
-
-                <div className="grid sm:grid-cols-2 gap-3">
-                  {service.features.map((feature) => (
-                    <div key={feature} className="flex items-center space-x-2">
-                      <ArrowRight size={16} className="text-secondary flex-shrink-0" />
-                      <span className="text-foreground">{feature}</span>
-                    </div>
-                  ))}
+                {/* Service Content */}
+                <div className="p-6 space-y-4">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-primary-foreground">
+                    <service.icon size={28} />
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                    {service.title}
+                  </h3>
+                  
+                  <p className="text-muted-foreground leading-relaxed">
+                    {service.description}
+                  </p>
+                  
+                  <div className="space-y-2">
+                    {service.features.slice(0, 4).map((feature) => (
+                      <div key={feature} className="flex items-center space-x-2">
+                        <ArrowRight size={14} className="text-secondary flex-shrink-0" />
+                        <span className="text-sm text-foreground">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <Link to="/contact">
+                    <Button 
+                      variant="ghost" 
+                      className="group-hover:text-secondary transition-colors p-0"
+                    >
+                      Get Started →
+                    </Button>
+                  </Link>
                 </div>
-
-                <Link to="/contact">
-                  <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 mt-4">
-                    Get Started <ArrowRight className="ml-2" size={20} />
-                  </Button>
-                </Link>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </section>
 
         {/* CTA Section */}

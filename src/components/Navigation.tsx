@@ -21,7 +21,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 animate-fade-in">
             <img src="/Logo.png" alt="Samvada Communications" className="h-12 w-12" />
-            <span className="text-xl font-bold text-primary hidden sm:block">
+            <span className="text-xl font-bold text-primary">
               Samvada Communications
             </span>
           </Link>
@@ -32,15 +32,16 @@ const Navigation = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className="text-foreground hover:text-primary transition-colors font-medium"
+                className={`font-medium transition-colors ${
+                  link.name === "Contact" 
+                    ? "bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg hover:opacity-90" 
+                    : "text-foreground hover:text-primary"
+                }`}
               >
                 {link.name}
               </Link>
             ))}
-            <Button variant="default" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity">
-              <Phone className="mr-2 h-4 w-4" />
-              +91 7619394676
-            </Button>
+
           </div>
 
           {/* Mobile menu button */}
@@ -60,15 +61,16 @@ const Navigation = () => {
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
-                className="block py-3 text-foreground hover:text-primary transition-colors font-medium"
+                className={`block py-3 font-medium transition-colors ${
+                  link.name === "Contact" 
+                    ? "bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg hover:opacity-90 mx-2" 
+                    : "text-foreground hover:text-primary"
+                }`}
               >
                 {link.name}
               </Link>
             ))}
-            <Button className="w-full mt-4 bg-gradient-to-r from-primary to-secondary">
-              <Phone className="mr-2 h-4 w-4" />
-              +91 7619394676
-            </Button>
+
           </div>
         )}
       </div>
