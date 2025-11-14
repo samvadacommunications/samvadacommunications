@@ -13,13 +13,6 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8 animate-fade-in-up">
-            {/* Tagline */}
-            <div className="inline-block">
-              <span className="text-secondary font-semibold text-sm bg-secondary/10 px-4 py-2 rounded-full">
-                50% discount on early purchase
-              </span>
-            </div>
-
             {/* Main Heading */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               Work With Our Full Time{" "}

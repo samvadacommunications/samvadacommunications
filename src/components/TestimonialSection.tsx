@@ -7,11 +7,13 @@ const testimonials = [
     text: "I am really really happy with the kind of service you guys provide every single time. There is an event that I give you or a small photo shoot or video editing or Digital Marketing. Every single thing is done so smoothly. You are always available, just a call away with lot of patience. You help and resolve each doubt of mine. Long way to go to you and your team. Let's continue to work together for many more years team.",
     author: "Anushree Chandrashekar",
     position: "Founder & CEO at Skillyuvam Academy",
+    avatar: "/Founder_and_CEO_at SkillyuvamAcademy.jpg",
   },
   {
     text: "When we decided to launch our new TagSkills Center in Udupi, we knew we needed more than just design, we needed storytelling. That's exactly what Samvada Communications delivered. From the banners to the posters and promotional content, every piece reflected our vision, values, and local connection. Their designs were crisp, culturally relevant, and aligned perfectly with our brand. The on-time delivery and responsiveness made the entire experience smooth and collaborative. Samvada didn't just create marketing material, they helped bring the TagSkills Udupi story to life. Grateful for their creativity, professionalism, and support throughout our launch. Looking forward to many more collaborations ahead.",
     author: "Prashun Shetty",
     position: "Founder & CEO at TagSkills",
+    avatar: "/Founder_and_CEO_at_TagSkills.jpg",
   },
 ];
 
@@ -77,13 +79,20 @@ const TestimonialSection = () => {
                 "{currentTestimonial.text}"
               </p>
 
-              <div className="border-t border-border pt-6">
-                <h4 className="text-xl font-bold text-foreground">
-                  {currentTestimonial.author}
-                </h4>
-                <p className="text-muted-foreground">
-                  {currentTestimonial.position}
-                </p>
+              <div className="border-t border-border pt-6 flex items-center space-x-4">
+                <img 
+                  src={currentTestimonial.avatar} 
+                  alt={currentTestimonial.author}
+                  className="w-16 h-16 rounded-full object-cover border-2 border-secondary/20"
+                />
+                <div>
+                  <h4 className="text-xl font-bold text-foreground">
+                    {currentTestimonial.author}
+                  </h4>
+                  <p className="text-muted-foreground">
+                    {currentTestimonial.position}
+                  </p>
+                </div>
               </div>
             </div>
 

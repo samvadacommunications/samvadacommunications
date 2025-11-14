@@ -53,10 +53,7 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <span className="text-secondary font-semibold text-sm bg-secondary/10 px-4 py-2 rounded-full">
-            50% discount on early purchase
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-6 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Our Service Area
           </h2>
         </div>

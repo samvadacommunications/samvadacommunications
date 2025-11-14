@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -28,19 +29,24 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`font-medium transition-colors ${
-                  link.name === "Contact" 
-                    ? "bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg hover:opacity-90" 
-                    : "text-foreground hover:text-primary"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.path;
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`font-medium transition-colors ${
+                    link.name === "Contact" 
+                      ? "bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg hover:opacity-90" 
+                      : isActive
+                        ? "text-primary font-semibold border-b-2 border-primary pb-1"
+                        : "text-foreground hover:text-primary"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
 
           </div>
 
@@ -56,20 +62,25 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden py-4 animate-fade-in">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setIsOpen(false)}
-                className={`block py-3 font-medium transition-colors ${
-                  link.name === "Contact" 
-                    ? "bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg hover:opacity-90 mx-2" 
-                    : "text-foreground hover:text-primary"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.path;
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setIsOpen(false)}
+                  className={`block py-3 font-medium transition-colors ${
+                    link.name === "Contact" 
+                      ? "bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg hover:opacity-90 mx-2" 
+                      : isActive
+                        ? "text-primary font-semibold bg-primary/10 px-2 py-1 rounded"
+                        : "text-foreground hover:text-primary"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
 
           </div>
         )}

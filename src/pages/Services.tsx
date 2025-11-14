@@ -193,8 +193,8 @@ const Services = () => {
                 </Button>
               </Link>
               <a href="tel:+917619394676">
-                <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
-                  Call +91 7619394676
+                <Button size="lg" className="text-white hover:opacity-90" style={{ backgroundColor: '#9480E0' }}>
+                  📞 Call +91 7619394676
                 </Button>
               </a>
             </div>
