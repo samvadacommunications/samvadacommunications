@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Code, TrendingUp, Palette, Film, MessageCircle, Package, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import webDev from "@/assets/web-dev.jpg";
-import digitalMarketing from "@/assets/digital-marketing.jpg";
+
 import graphicDesign from "@/assets/graphic-design.jpg";
 import socialMedia from "@/assets/social-media.jpg";
 import whatsappApi from "@/assets/whatsapp-api.jpg";
-import offlineMarketing from "@/assets/offline-marketing.jpg";
+
 
 const services = [
   {
@@ -37,7 +37,7 @@ const services = [
       "Analytics & Reporting",
       "Brand Management"
     ],
-    image: digitalMarketing,
+    image: "/digital_marketing.jpg",
   },
   {
     icon: Palette,
@@ -93,7 +93,7 @@ const services = [
       "Brochures & Flyers",
       "Event Marketing"
     ],
-    image: offlineMarketing,
+    image: "/image.webp",
   },
 ];
 
@@ -166,7 +166,7 @@ const Services = () => {
                   <Link to="/contact">
                     <Button 
                       variant="ghost" 
-                      className="group-hover:text-secondary transition-colors p-0"
+                      className="hover:bg-primary hover:text-primary-foreground transition-all p-2 px-4 rounded-lg"
                     >
                       Get Started →
                     </Button>

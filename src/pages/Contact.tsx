@@ -39,7 +39,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email Address",
-      details: ["info@samvadacommunications.com", "We reply within 24 hours"],
+      details: ["Officesamvada@gmail.com", "We reply within 24 hours"],
     },
     {
       icon: Clock,

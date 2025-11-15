@@ -18,7 +18,7 @@ const testimonials = [
   {
     text: "I have been collaborating with Samvada Communications for the past year for my Adugemane Catering digital marketing, and their support has been outstanding. Their creative ideas, professional approach, and consistent delivery have helped my business grow. They have also handled the digital communications for Vara Siddhi Vinayaka PU College with impressive results. I've recommended them to many others, all of whom have been equally satisfied. Highly recommended for impactful and dependable digital marketing & marketing support.",
     author: "Pradeep Shetty Bellala",
-    position: "Founder, Adugemane Caterers",
+    position: "Adugemane catring pvt. Ltd",
     avatar: "/PRADEEP SHETTY K.jpg",
   },
 ];
