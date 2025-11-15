@@ -89,101 +89,20 @@ const Contact = () => {
           </div>
         </section>
 
-        {/* Contact Form & Map */}
+        {/* Map */}
         <section className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Form */}
-            <div className="animate-fade-in-up">
-              <div className="bg-card rounded-2xl p-8 shadow-lg border border-border">
-                <h2 className="text-3xl font-bold mb-6">Send Us a Message</h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">
-                      Your Name *
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      placeholder="John Doe"
-                      className="w-full"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">
-                      Email Address *
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      placeholder="john@example.com"
-                      className="w-full"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium mb-2">
-                      Phone Number
-                    </label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="+91 1234567890"
-                      className="w-full"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">
-                      Your Message *
-                    </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      placeholder="Tell us about your project..."
-                      rows={6}
-                      className="w-full"
-                    />
-                  </div>
-
-                  <Button 
-                    type="submit" 
-                    size="lg" 
-                    className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90"
-                  >
-                    Send Message
-                  </Button>
-                </form>
-              </div>
-            </div>
-
-            {/* Map */}
-            <div className="animate-slide-in-right">
-              <div className="bg-card rounded-2xl p-2 shadow-lg border border-border h-full min-h-[600px]">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.1234567890123!2d74.774472!3d13.512833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDMwJzQ2LjIiTiA3NMKwNDYnMjguMSJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0, borderRadius: "1rem" }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="min-h-[580px]"
-                ></iframe>
-              </div>
+          <div className="max-w-4xl mx-auto animate-fade-in">
+            <div className="bg-card rounded-2xl p-2 shadow-lg border border-border h-full min-h-[600px]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.1234567890123!2d74.774472!3d13.512833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDMwJzQ2LjIiTiA3NMKwNDYnMjguMSJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0, borderRadius: "1rem" }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="min-h-[580px]"
+              ></iframe>
             </div>
           </div>
         </section>
