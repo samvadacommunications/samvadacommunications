@@ -119,7 +119,7 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-12 sm:py-16 md:py-20 px-4">
+      <section className="py-12 sm:py-16 md:py-20 px-2 sm:px-4">
         <div className="container mx-auto">
           <div className="space-y-10 sm:space-y-12 md:space-y-16">
             {services.map((service, index) => (
