@@ -1,7 +1,7 @@
 const clients = [
   { name: "TagSkills", logo: "/tagskills.jpg" },
   { name: "Skillyuvam Academy", logo: "/skill yuvam logo.jpg" },
-  { name: "Aduge Mane", logo: "/aduge mane logo.jpg" },
+  { name: "Adugemane catring pvt. Ltd", logo: "/aduge mane logo.jpg" },
   { name: "Ashrith College", logo: "/ashrith clg logo.jpg" },
   { name: "Gayatri", logo: "/gaythri logo.jpg" },
   { name: "Liya", logo: "/liya.jpg" },

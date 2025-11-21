@@ -1,10 +1,10 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Code, TrendingUp, Palette, Film, MessageCircle, Package, ArrowRight } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Code, TrendingUp, Palette, Film, MessageCircle, Package } from "lucide-react";
 import { Link } from "react-router-dom";
 import webDev from "@/assets/web-dev.jpg";
-
 import graphicDesign from "@/assets/graphic-design.jpg";
 import socialMedia from "@/assets/social-media.jpg";
 import whatsappApi from "@/assets/whatsapp-api.jpg";
@@ -79,7 +79,7 @@ const services = [
       "Two-Way Communication",
       "Integration Support"
     ],
-    image: "/whats app api.jpg",
+    image: whatsappApi,
   },
   {
     icon: Package,
@@ -102,105 +102,85 @@ const Services = () => {
     <div className="min-h-screen">
       <Navigation />
       
-      <main className="pt-32 pb-20">
-        {/* Hero Section */}
-        <section className="container mx-auto px-4 mb-20">
-          <div className="text-center max-w-3xl mx-auto animate-fade-in">
-            <span className="text-secondary font-semibold text-sm bg-secondary/10 px-4 py-2 rounded-full">
-              Our Services
+      {/* Hero Section */}
+      <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 bg-gradient-to-br from-background via-muted/30 to-background">
+        <div className="container mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            Complete Digital Solutions for Your{" "}
+            <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
+              Business Growth
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-6 mb-6">
-              Complete Digital Solutions for Your{" "}
-              <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
-                Business Growth
-              </span>
-            </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              From web development to digital marketing, we offer comprehensive services 
-              to help your business thrive in the digital world.
-            </p>
-          </div>
-        </section>
+          </h1>
+          <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+            From web development to digital marketing, we offer comprehensive services 
+            to help your business thrive in the digital world.
+          </p>
+        </div>
+      </section>
 
-        {/* Services Grid */}
-        <section className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Services Grid */}
+      <section className="py-12 sm:py-16 md:py-20 px-4">
+        <div className="container mx-auto">
+          <div className="space-y-10 sm:space-y-12 md:space-y-16">
             {services.map((service, index) => (
-              <div
-                key={service.title}
-                className="group bg-card rounded-2xl overflow-hidden shadow-lg border border-border hover:shadow-xl transition-all duration-300 animate-fade-in-up"
-                style={{ animationDelay: `${index * 100}ms` }}
+              <Card 
+                key={service.title} 
+                className={`overflow-hidden animate-fade-in hover:shadow-xl transition-shadow duration-300 ${index % 2 === 0 ? "" : "bg-muted/50"}`}
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Service Image */}
-                <div className="h-48 overflow-hidden">
-                  <img 
-                    src={service.image} 
-                    alt={service.title} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-                
-                {/* Service Content */}
-                <div className="p-6 space-y-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-primary-foreground hover:scale-110 hover:rotate-12 transition-all duration-300 group-hover:shadow-lg">
-                    <service.icon size={28} className="group-hover:animate-bounce" />
+                <div className={`grid md:grid-cols-2 gap-8 ${index % 2 === 0 ? "" : "md:grid-flow-dense"}`}>
+                  
+                  {/* Image Column */}
+                  <div className={`relative h-56 sm:h-64 md:h-auto ${index % 2 === 0 ? "" : "md:col-start-2"}`}>
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="absolute inset-0 w-full h-full object-cover" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent" />
                   </div>
-                  
-                  <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                    {service.title}
-                  </h3>
-                  
-                  <p className="text-muted-foreground leading-relaxed">
-                    {service.description}
-                  </p>
-                  
-                  <div className="space-y-2">
-                    {service.features.slice(0, 4).map((feature) => (
-                      <div key={feature} className="flex items-center space-x-2">
-                        <ArrowRight size={14} className="text-secondary flex-shrink-0" />
-                        <span className="text-sm text-foreground">{feature}</span>
+
+                  {/* Content Column */}
+                  <CardContent className={`p-6 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-center ${index % 2 === 0 ? "" : "md:col-start-1 md:row-start-1"}`}>
+                    
+                    {/* Icon + Title */}
+                    <div className="flex items-center gap-3 sm:gap-4 mb-5 sm:mb-6">
+                      <div className="p-2 sm:p-3 bg-primary/10 rounded-lg">
+                        <service.icon className="h-6 w-6 text-primary" />
                       </div>
-                    ))}
-                  </div>
-                  
-                  <Link to="/contact">
-                    <Button 
-                      variant="ghost" 
-                      className="hover:bg-primary hover:text-primary-foreground transition-all p-2 px-4 rounded-lg"
-                    >
-                      Get Started →
-                    </Button>
-                  </Link>
+                      <h2 className="text-2xl sm:text-3xl font-bold">{service.title}</h2>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-muted-foreground mb-5 sm:mb-6 leading-relaxed">
+                      {service.description}
+                    </p>
+
+                    {/* Features List */}
+                    <div className="mb-5 sm:mb-6">
+                      <h3 className="text-lg font-semibold mb-3">What We Offer:</h3>
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        {service.features.map((feature) => (
+                          <li key={feature} className="flex items-center gap-2">
+                            <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+                            <span className="text-sm">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* CTA Button */}
+                    <Link to="/contact">
+                      <Button className="w-fit">Get Started</Button>
+                    </Link>
+                    
+                  </CardContent>
                 </div>
-              </div>
+              </Card>
             ))}
           </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="container mx-auto px-4 mt-20">
-          <div className="bg-gradient-to-r from-primary to-navy rounded-3xl p-12 text-center text-primary-foreground">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              Let's discuss how our services can help you achieve your goals.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact">
-                <Button size="lg" variant="secondary" className="bg-secondary hover:bg-secondary/90">
-                  Contact Us Now
-                </Button>
-              </Link>
-              <a href="tel:+917619394676">
-                <Button size="lg" className="text-white hover:opacity-90" style={{ backgroundColor: '#9480E0' }}>
-                  📞 Call +91 7619394676
-                </Button>
-              </a>
-            </div>
-          </div>
-        </section>
-      </main>
+        </div>
+      </section>
 
       <Footer />
     </div>
