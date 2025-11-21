@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
-import teamHero from "@/assets/team-hero.jpg";
 
 const HeroSection = () => {
   return (
@@ -56,7 +55,7 @@ const HeroSection = () => {
           <div className="relative animate-slide-in-right">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img 
-                src={teamHero} 
+                src="/herosectionimage.jpg" 
                 alt="Expert team working together" 
                 className="w-full h-auto object-cover block"
               />
