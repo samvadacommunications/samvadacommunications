@@ -20,10 +20,10 @@ const Footer = () => {
               <a href="#" className="hover:text-secondary transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="hover:text-secondary transition-colors">
+              <a href="https://www.instagram.com/samvada_communications?igsh=MTM5MTc3YWE5aGp5" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="hover:text-secondary transition-colors">
+              <a href="https://www.linkedin.com/in/samvada-communications" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors">
                 <Linkedin size={20} />
               </a>
               <a href="#" className="hover:text-secondary transition-colors">
