@@ -66,7 +66,7 @@ const Footer = () => {
               <li>Web Development</li>
               <li>Digital Marketing</li>
               <li>Graphic Design</li>
-              <li>Social Media</li>
+              <li>Social Media & Film Promotions</li>
               <li>WhatsApp API</li>
               <li>Offline Marketing</li>
             </ul>
