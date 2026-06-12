@@ -52,7 +52,7 @@ export default function About() {
             <Reveal>
               <div className="soft-card soft-card-hover p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 md:gap-12">
                 <img 
-                  src="/co_founder_SC.jpg" 
+                  src="/Founder_02.jpeg" 
                   alt="Swasthik Althar" 
                   className="size-48 md:size-64 rounded-full object-cover ring-8 ring-white shadow-glow shrink-0" 
                 />

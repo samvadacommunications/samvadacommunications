@@ -58,7 +58,7 @@ function Hero() {
           </div>
           <div className="mt-8 flex items-center gap-4">
             <div className="flex -space-x-2">
-              {["/tagskills.jpg", "/skill yuvam logo.jpg", "/aduge mane logo.jpg", "/ashrith clg logo.jpg"].map((src, i) => (
+              {["/tagskills.jpg", "/Saligrama kayaking point.jpg", "/aduge mane logo.jpg", "/ashrith clg logo.jpg"].map((src, i) => (
                 <img key={i} src={src} alt="Client" className="size-9 rounded-full ring-2 ring-white object-contain bg-white shrink-0" />
               ))}
             </div>
@@ -83,7 +83,7 @@ function Hero() {
 function Logos() {
   const brands = [
     "/tagskills.jpg",
-    "/skill yuvam logo.jpg",
+    "/Saligrama kayaking point.jpg",
     "/aduge mane logo.jpg",
     "/ashrith clg logo.jpg",
     "/gaythri logo.jpg",
