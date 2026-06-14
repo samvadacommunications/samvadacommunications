@@ -96,7 +96,7 @@ export default function About() {
             {[
               { v: 100, s: "+", l: "Happy Clients" },
               { v: 500, s: "+", l: "Projects Delivered" },
-              { v: 3, s: "+", l: "Years of Craft" },
+              { v: 4, s: "+", l: "Years of Craft" },
               { v: 98, s: "%", l: "Satisfaction Rate" },
             ].map((k, i) => (
               <Reveal key={k.l} delay={i * 60}>

@@ -119,7 +119,7 @@ function AboutPreview() {
             <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80" alt="Team collaborating" loading="lazy" className="rounded-2xl w-full aspect-[4/3] object-cover" />
           </div>
           <div className="absolute -bottom-6 -right-2 md:-right-6 glass-card rounded-2xl shadow-soft px-5 py-4 flex items-center gap-3">
-            <div className="size-10 rounded-xl gradient-brand text-white grid place-items-center font-display font-extrabold">3+</div>
+            <div className="size-10 rounded-xl gradient-brand text-white grid place-items-center font-display font-extrabold">4+</div>
             <div>
               <div className="font-display font-extrabold text-sm">Years of Impact</div>
               <div className="text-xs text-muted-foreground">Since 2022</div>
@@ -156,7 +156,7 @@ function AboutPreview() {
             {[
               { v: 100, s: "+", l: "Happy Clients" },
               { v: 500, s: "+", l: "Projects" },
-              { v: 3, s: "+", l: "Years" },
+              { v: 4, s: "+", l: "Years" },
               { v: 98, s: "%", l: "Satisfaction" },
             ].map((k) => (
               <div key={k.l} className="soft-card p-4 text-center">
